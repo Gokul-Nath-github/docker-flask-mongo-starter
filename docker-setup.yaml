@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  db_for_app:
+   image: mongo
+   container_name: main_db
+   ports:
+    - "27017:27017"
+   envirnomnet:
+    MONGO_INITDB_ROOT_USERNAME: admin
+    MONGO_INITDB_ROOT_PASSWORD: password
+   volumes:
+    db_data_main:/data/db
+   healthcheck:
+    test: ["CMD", "mongosh", "--eval", "db.adminCommand(ping)"]
+    interval: 10s
+    timeout: 5s
+    retrties: 3
+
