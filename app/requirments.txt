@@ -1,2 +1,2 @@
 flask==2.0.1
-python==4.0.1
+python==25.1.1
