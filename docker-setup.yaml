@@ -10,8 +10,7 @@ services:
    volumes:
     - db_data_main:/data/db
    healthcheck:
-    test:
-    [
+    test: [
       "CMD",
       "mongo",
       "--quiet",
