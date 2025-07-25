@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   db_for_app:
    image: mongo
