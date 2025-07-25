@@ -10,10 +10,18 @@ services:
    volumes:
     - db_data_main:/data/db
    healthcheck:
-    test: ["CMD", "mongosh", "--eval", "db.adminCommand(ping)"]
+    test:
+    [
+      "CMD",
+      "mongo",
+      "--quiet",
+      "127.0.0.1/test",
+      "--eval",
+      "'quit(db.runCommand({ ping: 1 }).ok ? 0 : 2)'",
+    ]
     interval: 10s
     timeout: 5s
-    start_period: 50s
+    start_period: 30s
     retries: 3
   db_gui:
    image: mongo-express
