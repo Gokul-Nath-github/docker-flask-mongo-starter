@@ -5,7 +5,7 @@ services:
    container_name: main_db
    ports:
     - "27017:27017"
-   environmnet:
+   environment:
     MONGO_INITDB_ROOT_USERNAME: admin
     MONGO_INITDB_ROOT_PASSWORD: password
    volumes:
