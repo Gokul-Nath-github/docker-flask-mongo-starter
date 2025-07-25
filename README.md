@@ -31,5 +31,5 @@ docker-compose up -d --build
 
 ## Stop all services by 
 ```
-docker compose -f docker-setup
+docker compose -f docker-setup.yaml down -v
 ```
