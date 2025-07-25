@@ -6,6 +6,6 @@ COPY requirments.txt .
 
 RUN pip install no-cache-dir -r requirments.txt
 
-COPY ..
+COPY . .
 
 CMD ["python","app.py"]
