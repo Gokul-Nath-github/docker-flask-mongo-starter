@@ -8,4 +8,4 @@ RUN pip install -r requirments.txt
 
 COPY . .
 
-CMD ["python","app.py"]
+CMD ["python","main.py"]
