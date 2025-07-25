@@ -12,7 +12,8 @@ services:
    healthcheck:
     test: ["CMD", "mongosh", "--eval", "db.adminCommand(ping)"]
     interval: 10s
-    timeout: 50s
+    timeout: 5s
+    start_period: 50s
     retries: 3
   db_gui:
    image: mongo-express
