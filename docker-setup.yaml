@@ -8,9 +8,9 @@ services:
     MONGO_INITDB_ROOT_USERNAME: admin
     MONGO_INITDB_ROOT_PASSWORD: password
    volumes:
-    - db_data_main:/data/db
+    - db_data_main:/data/db 
    healthcheck:
-    test: ["CMD", "mongosh", "--eval", "db.adminCommand(ping)"]
+    test: ["CMD", "mongosh", "-u", "admin", "-p", "password", "--eval", "db.adminCommand('ping')"]
     interval: 10s
     timeout: 5s
     start_period: 50s
